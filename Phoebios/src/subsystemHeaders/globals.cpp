@@ -8,9 +8,9 @@ pros::Controller controller(pros::E_CONTROLLER_MASTER);
 
 //DRIVETRAIN
 pros::Motor driveLeftBack(4, pros::E_MOTOR_GEARSET_18,true, pros::E_MOTOR_ENCODER_COUNTS);
-pros::Motor driveLeftFront(3, pros::E_MOTOR_GEARSET_18, pros::E_MOTOR_ENCODER_COUNTS);
-pros::Motor driveRightFront(5, pros::E_MOTOR_GEARSET_18,true, pros::E_MOTOR_ENCODER_COUNTS);
-pros::Motor driveRightBack(2, pros::E_MOTOR_GEARSET_18, pros::E_MOTOR_ENCODER_COUNTS);
+pros::Motor driveLeftFront(3, pros::E_MOTOR_GEARSET_18, false, pros::E_MOTOR_ENCODER_COUNTS);
+pros::Motor driveRightFront(5, pros::E_MOTOR_GEARSET_18,false, pros::E_MOTOR_ENCODER_COUNTS);
+pros::Motor driveRightBack(2, pros::E_MOTOR_GEARSET_18, false, pros::E_MOTOR_ENCODER_COUNTS);
 
 //INTAKE
 pros::Motor intake(8, pros::E_MOTOR_GEARSET_18,true, pros::E_MOTOR_ENCODER_COUNTS);

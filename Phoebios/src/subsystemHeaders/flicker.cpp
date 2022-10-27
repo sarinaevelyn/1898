@@ -7,6 +7,9 @@
    void setFlicker(int power){
      flicker = power;
   }
+  void resetFlickerEncoders(){
+    flicker.tare_position();
+  }
 
  //DRIVER CONTROL FUNCTIONS
  void  setFlickerMotors(){
@@ -16,3 +19,13 @@
    setFlicker(flickerOn);
   //  setFlicker(flickerOff);
  }
+
+void flickerAuton(int units, int voltage){
+int direction = abs(units/units);
+resetFlickerEncoders();
+while(abs(flicker.get_encoder_units())<abs(units)){
+ setFlicker(voltage);
+ pros::delay(10);
+ setFlicker(0);
+}
+}

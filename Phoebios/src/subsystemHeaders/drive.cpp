@@ -19,6 +19,13 @@ double averageDriveEncoders(){
   fabs (driveRightBack.get_position())) / 4;
 }
 
+void driveThing(int leftBack, int leftFront, int rightBack, int rightFront){
+driveLeftFront = leftFront;
+driveRightFront = rightFront; 
+driveLeftBack = leftBack; 
+driveRightBack = rightBack;
+}
+
 void setDrive(int leftJoystickY,int leftJoystickX, int rightJoystickX){
   //ARCADE DRIVE LEEFT JOYSTICK
   driveLeftFront = (leftJoystickY+leftJoystickX-rightJoystickX); 
@@ -34,9 +41,36 @@ void setDriveMotors(){
    setDrive(leftJoystickY, leftJoystickX,rightJoystickX);
 }
 
-void straight(int units, int voltage){
-// setDrive(voltage);
+void yAxis(int units, int voltage){
+int direction = abs(units/units);
+resetDriveEncoders();
+while(averageDriveEncoders()<abs(units)){
+  driveThing(voltage ,voltage , voltage, voltage);
+  pros::delay(10);
+  driveThing(0,0,0,0);
 }
+}
+void xAxis(int units, int voltage){
+int direction = abs(units/units);
+resetDriveEncoders();
+while(averageDriveEncoders()<abs(units)){
+  driveThing(voltage ,-voltage , voltage, -voltage);
+  pros::delay(10);
+  driveThing(0,0,0,0);
+}
+}
+
+void gay(int units, int voltage){
+int direction = abs(units/units);
+resetDriveEncoders();
+while(averageDriveEncoders()<abs(units)){
+  driveThing(voltage ,voltage*0 , voltage, voltage*0);
+  pros::delay(10);
+  driveThing(0,0,0,0);
+}
+}
+
+
 
 
 

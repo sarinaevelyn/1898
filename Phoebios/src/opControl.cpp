@@ -1,4 +1,5 @@
 #include "main.h"
+#include "pros/rtos.hpp"
 #include "subsystemFiles/drive.hpp"
 #include "subsystemFiles/flicker.hpp"
 #include "subsystemFiles/flywheel.hpp"
@@ -17,5 +18,7 @@ void opcontrol() {
   setFlywheelMotors();
   setRollerMotors();
 		
+  pros::delay(20);
+
  }
 }

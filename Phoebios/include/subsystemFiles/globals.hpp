@@ -1,3 +1,4 @@
+#pragma once
 #include "main.h"
 /*This file is where I declare all of the variables I defined in subsystemHeaders.
 */

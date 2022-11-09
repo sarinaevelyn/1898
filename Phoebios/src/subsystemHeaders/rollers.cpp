@@ -1,11 +1,12 @@
 #include "main.h"
 #include "pros/misc.h"
+#include "pros/screen.h"
 #include "subsystemFiles/globals.hpp"
 /*This is where I define all of my roller functions
 */
 
 //HELPER FUNCTION
-   void setRoller(int power){
+ void setRoller(int power){
      roller = power;
   }
 
@@ -19,12 +20,16 @@
    setRoller(rollerOn);
  }
 
- void rollerAuton(int units, int voltage){
+void rollerAuton(int units, int voltage){
 int direction = abs(units/units);
 resetRollerEncoders();
 while(abs(roller.get_encoder_units())<abs(units)){
  setRoller(voltage);
  pros::delay(10);
  setRoller(0);
+  }
 }
+
+void rollerAutonV2on(){
+
 }

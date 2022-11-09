@@ -78,12 +78,13 @@ void opcontrol(void);
  */
 //#include <iostream>
 //SUBSYSTEM FILES
-// #include "subsystemFiles/drive.hpp"
-// #include "subsystemFiles/flicker.hpp"
-// #include "subsystemFiles/flywheel.hpp"
-// #include "subsystemFiles/globals.hpp"
-// #include "subsystemFiles/intake.hpp"
-// #include "subsystemFiles/rollers.hpp"
+#include "subsystemFiles/drive.hpp"
+#include "subsystemFiles/flicker.hpp"
+#include "subsystemFiles/flywheel.hpp"
+#include "subsystemFiles/globals.hpp"
+#include "subsystemFiles/intake.hpp"
+#include "subsystemFiles/rollers.hpp"
+#include "subsystemFiles/pneumatics.hpp"
 
 
 

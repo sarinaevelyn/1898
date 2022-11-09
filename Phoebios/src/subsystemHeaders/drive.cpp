@@ -38,14 +38,14 @@ void setDriveMotors(){
    int leftJoystickY = controller.get_analog(pros::E_CONTROLLER_ANALOG_LEFT_Y);
    int leftJoystickX = controller.get_analog(pros::E_CONTROLLER_ANALOG_LEFT_X);
    int rightJoystickX = controller.get_analog(pros::E_CONTROLLER_ANALOG_RIGHT_X);
-   setDrive(leftJoystickY, leftJoystickX,rightJoystickX);
+   setDrive(-leftJoystickY, -leftJoystickX,-rightJoystickX);
 }
 
 void yAxis(int units, int voltage){
 int direction = abs(units/units);
 resetDriveEncoders();
 while(averageDriveEncoders()<abs(units)){
-  driveThing(voltage ,voltage , voltage, voltage);
+  driveThing(-direction*voltage ,-direction*voltage , direction*voltage, direction*voltage);
   pros::delay(10);
   driveThing(0,0,0,0);
 }
@@ -54,7 +54,7 @@ void xAxis(int units, int voltage){
 int direction = abs(units/units);
 resetDriveEncoders();
 while(averageDriveEncoders()<abs(units)){
-  driveThing(voltage ,-voltage , voltage, -voltage);
+  driveThing(direction*voltage ,-direction*voltage , direction*voltage, -direction*voltage);
   pros::delay(10);
   driveThing(0,0,0,0);
 }
@@ -64,7 +64,7 @@ void gay(int units, int voltage){
 int direction = abs(units/units);
 resetDriveEncoders();
 while(averageDriveEncoders()<abs(units)){
-  driveThing(voltage ,voltage*0 , voltage, voltage*0);
+  driveThing(voltage, voltage , voltage, voltage);
   pros::delay(10);
   driveThing(0,0,0,0);
 }

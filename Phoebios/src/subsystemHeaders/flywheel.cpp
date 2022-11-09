@@ -8,7 +8,7 @@
      flywheel = power;
   }
   void resetFlywheelEncoders(){
-flywheel.tare_position();
+    flywheel.tare_position();
   }
 
 
@@ -21,11 +21,11 @@ flywheel.tare_position();
 
 
 void flywheelAuton(int units, int voltage){
-int direction = abs(units/units);
-resetFlywheelEncoders();
-while(abs(flywheel.get_encoder_units())<abs(units)){
- setFlywheel(voltage);
- pros::delay(10);
- setFlywheel(0);
-}
+  int direction = abs(units/units);
+  resetFlywheelEncoders();
+  while(abs(flywheel.get_encoder_units())<abs(units)){
+    setFlywheel(voltage);
+    pros::delay(10);
+    setFlywheel(0);
+  }
 }

@@ -23,7 +23,7 @@
 void intakeAuton(int units, int voltage){
 int direction = abs(units/units);
 resetIntakeEncoders();
-while(abs(flicker.get_encoder_units())<abs(units)){
+while(abs(intake.get_encoder_units())<abs(units)){
  setIntake(voltage);
  pros::delay(10);
  setIntake(0);

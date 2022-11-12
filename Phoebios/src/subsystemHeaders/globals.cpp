@@ -23,3 +23,6 @@ pros::Motor flicker(11, pros::E_MOTOR_GEARSET_18,true, pros::E_MOTOR_ENCODER_COU
 
 //FLYWHEEL
 pros::Motor flywheel(13, pros::E_MOTOR_GEARSET_06,true, pros::E_MOTOR_ENCODER_COUNTS);
+
+//INERTIAL SENSOR
+pros::Imu inertialSensor(6);

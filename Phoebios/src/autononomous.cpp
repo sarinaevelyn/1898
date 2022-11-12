@@ -1,4 +1,5 @@
 #include "main.h"
+#include "pros/rtos.hpp"
 #include "subsystemFiles/drive.hpp"
 #include "subsystemFiles/flywheel.hpp"
 #include "subsystemFiles/rollers.hpp"
@@ -87,22 +88,31 @@ void autonomous(){
         */
 
 // strafe right (towards the roller)
-    xAxis(600,-drivetrainVoltage);
-        pros::delay(250);
+    // xAxis(600,-drivetrainVoltage);
+    //     pros::delay(250);
          
 
 // spin the roller
-    roller.move_velocity(-200);
-    pros::delay(250);
-    roller.move_velocity(0); 
+    // roller.move_velocity(-200);
+    // pros::delay(250);
+    // roller.move_velocity(0); 
 
+   
     /* setRoller(rollerPower);
     pros::delay(500);
     setRoller(0);
     */
-
-   
+        yAxis(driveForwardUnit*1.5,200);
+        gay(turnUnit);
+        xAxis(driveForwardUnit*6, 200);
+        // // pros::delay(200);
+        // gay(200,200);    
+        // yAxis(1000,200);
+        // gay(20,200);
 }
+
+
+
 
 // std::shared_ptr<okapi::ChassisController> drive = okapi::ChassisControllerBuilder()
 //     .withMotors(leftFMotor, rightFMotor, rightBMotor, leftBMotor)

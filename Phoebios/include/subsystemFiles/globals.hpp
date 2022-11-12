@@ -25,4 +25,6 @@ extern pros::Motor flicker;
 //FLYWHEEL
 extern pros::Motor flywheel;
 
+extern pros::Imu inertialSensor;
+
 

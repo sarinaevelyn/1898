@@ -102,9 +102,17 @@ void autonomous(){
     pros::delay(500);
     setRoller(0);
     */
-        yAxis(driveForwardUnit*1.5,200);
-        gay(turnUnit);
-        xAxis(driveForwardUnit*6, 200);
+        yAxis(-driveForwardUnit*1.5,200);
+        gay(turnUnit, 500);
+        xAxis(driveForwardUnit*2, 200);
+        xAxis(-driveForwardUnit*4, 500);
+        gay(turnUnit, 500);
+        yAxis(driveForwardUnit*3,500);
+        gay(turnUnit, 500);
+        xAxis(-driveForwardUnit*2,500);
+        gay(-turnUnit, 500);
+        xAxis(driveForwardUnit, 500);
+
         // // pros::delay(200);
         // gay(200,200);    
         // yAxis(1000,200);

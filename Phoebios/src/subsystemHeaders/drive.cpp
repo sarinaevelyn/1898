@@ -59,7 +59,7 @@ int direction = abs(units/units);
 resetDriveEncoders();
 while(averageDriveEncoders()<abs(units)){
  if(abs(gyro.x) > 5){
- units = units +5;
+ gay(gyro.x,500);
  }
  else{
   driveThing(direction*voltage ,-direction*voltage , direction*voltage, -direction*voltage);
